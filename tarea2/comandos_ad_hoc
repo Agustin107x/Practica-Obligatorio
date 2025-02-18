@@ -1,0 +1,7 @@
+1. Verificar tiempo de actividad en lo servidores:
+
+ansible -i inventory/inventory.ini all -m shell -a "uptime"
+
+2. Instalar apache en servidores WEB.
+
+ansible -i inventory/inventory.ini all -m package -a "name=httpd,apache2 state=present"
