@@ -2,7 +2,7 @@
 	<h1>Pagina de prueba</1>
 	<h2>A continuacion se detallara informacion del servidor:</h2>
 	<p> Hostname: {{ ansible_hostname }} <br>
-	Fecha: {{ ansible_date_time.time }}
+	Fecha: {{ ansible_date_time.time }} <br>
 	Direccion Ip: {{ ansible_all_ipv4_addresses[0] }}
 	</p>
 </html>
