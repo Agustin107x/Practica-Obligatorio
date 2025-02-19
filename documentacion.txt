@@ -1,0 +1,2 @@
+# Esto de abajo es una imagen
+![Imagen de Ansible](/imagenes/ansible.jpg "Ansible")
