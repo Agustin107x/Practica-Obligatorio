@@ -1,28 +1,55 @@
-# Finalidad
+#  Proyecto Ansible ORT 2025
 
-Este es un documento de practica para el obligatorio del Taller de Servidores Linux, Facultad ORT 2025
+Este es un pequeño proyecto de **Ansible** que ejecuta playbooks en distintos equipos.
 
-## Tarea 2
+## Requisitos
 
-2.1 Verifica el tiempo de actividad (uptime) en todos los servidores. 
+- Un equipo principal que actúe como **bastión**.
+- Equipos **Slaves** que recibirán las tareas.
+- Acceso **SSH** a los equipos de destino.
+
+## Dependencias
+
+Es necesario instalar la colección de módulos **Ansible Posix** para ejecutar los playbooks correctamente.  
+Más información en la [documentación oficial](https://docs.ansible.com/ansible/latest/collections/ansible/posix/index.html).
+
+## Instalación
+
+Clonamos el repositorio:
+
 ```bash
-ansible -i inventory/inventory.ini all -m shell -a "uptime"
+git clone https://github.com/Agustin107x/Practica-Obligatorio.git
+cd Practica-Obligatorio
 ```
-2.2 Instala apache en los servidores web. 
+Luego, modificamos el archivo inventory.ini (./inventory/inventory.ini) con los hostnames e IPs de nuestros equipos Slaves:
+
+```ini
+[centos]
+centos-srv ansible_host=192.168.2.10  # Reemplazar con la IP y Hostname real
+
+[ubuntu]
+ubuntu-srv ansible_host=192.168.2.30  # Reemplazar con la IP y Hostname real
+
+[linux:children]
+centos
+ubuntu
+
+[linux:vars]
+ansible_user=sysadmin  # Cambiar si se usa otro usuario
+
+[webserver]
+centos-srv  # Reemplazar si es necesario.
+```
+
+## Instalación de dependencias
+Para instalar las dependencias necesarias, ejecutar:
+
 ```bash
-test
-```
-2.3 Recupera el uso de espacio en disco de los servidores ubuntu. 
-```bash
-ansible -i inventory/inventory.ini all -m shell -a "df -f"
+ansible-galaxy install -r collections/requirements.yml
 ```
 
-## Usage
+## Ejecución de playbooks.
 
-```
-Test
-```
+## License
 
-## Test
-
-Texto de ejemplo
+[MIT](https://choosealicense.com/licenses/mit/)
