@@ -1,10 +1,14 @@
-# Esto de abajo es una imagen
-![Imagen de Ansible](/imagenes/ansible.jpg "Ansible")
+#  Obligatorio Taller de Servidores Linux, Febrero 2025
 
-# Segunda Prueba
+## Profesor
 
-![Imagen](imagenes/ansible.jpg "Ansible2")
-  
+- Enrique Verdes
 
+## Alumnos
+
+- Agustin Neves (321438)
+- Lucas Gonzalez (231346)
+
+***
 
 
