@@ -15,7 +15,7 @@
 
 ### 1. Verificar tiempo de actividad en los servidores:
 
-**Ejecución del comando**
+**Ejecución del comando**  
 ```bash
 ansible -i inventory/inventory.ini all -m shell -a "uptime"
 ```
