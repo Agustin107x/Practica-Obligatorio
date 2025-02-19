@@ -3,7 +3,5 @@
 
 # Segunda Prueba
 <br>
-<br>
-<br>
-![Imagen de Ansible](imagenes/ansible.jpg "Ansible")
+![Imagen de Ansible](/imagenes/ansible.jpg "Ansible")
 
