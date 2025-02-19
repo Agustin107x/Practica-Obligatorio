@@ -19,7 +19,7 @@
 ```bash
 ansible -i inventory/inventory.ini all -m shell -a "uptime"
 ```
-**Salida del comando**
+**Salida del comando**  
 ![Salida T2E1](/images/Tarea2/Salida%20tarea%202%20ejercicio%201.png)
 
 ### 2. Instalar apache en servidores WEB.
