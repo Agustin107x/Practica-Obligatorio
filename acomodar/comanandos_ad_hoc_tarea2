@@ -8,6 +8,6 @@ ansible -i inventory/inventory.ini centos -m yum -a "name=httpd state=present" -
 
 3. Verificar uso de epsacio en disco de los servidores ubuntu
 
-ansible -i inventory/inventory.ini all -m shell -a "df -f"
+ansible -i inventory/inventory.ini all -m shell -a "df -h"
 
 
