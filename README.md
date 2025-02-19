@@ -11,7 +11,7 @@ Este es un pequeño proyecto de **Ansible** que ejecuta playbooks en distintos e
 ## Dependencias
 
 Es necesario instalar la colección de módulos **Ansible Posix** para ejecutar los playbooks correctamente.  
-Más información en la [documentación oficial](https://docs.ansible.com/ansible/latest/collections/ansible/posix/index.html).
+Aquì se encuentra el [sitio oficial](https://docs.ansible.com/ansible/latest/collections/ansible/posix/index.html).
 
 ## Instalación
 
