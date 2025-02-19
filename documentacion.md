@@ -2,6 +2,6 @@
 ![Imagen de Ansible](/imagenes/ansible.jpg "Ansible")
 
 # Segunda Prueba
-<br>
-![Imagen de Ansible](/imagenes/ansible.jpg "Ansible")
+
+![Imagen](imagenes/ansible.jpg "Ansible2")
 
