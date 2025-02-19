@@ -4,7 +4,7 @@ ansible -i inventory/inventory.ini all -m shell -a "uptime"
 
 2. Instalar apache en servidores WEB.
 
-ansible -i inventory/inventory.ini all -m package -a "name=httpd,apache2 state=present"
+ansible -i inventory/inventory.ini centos -m yum -a "name=httpd state=present" --become --ask-become-pass
 
 3. Verificar uso de epsacio en disco de los servidores ubuntu
 
