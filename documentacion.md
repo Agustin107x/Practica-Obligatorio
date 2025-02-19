@@ -30,9 +30,10 @@ ansible -i inventory/inventory.ini all -m shell -a "uptime"
 ```bash
 ansible -i inventory/inventory.ini centos -m yum -a "name=httpd state=present" --become --ask-become-pass
 ```
-**Salida del comando**
+**Salida del comando**  
 ![Salida T2E1](/images/Tarea2/salida%20tarea%202%20ejercicio%202.png)
 
+# &nbsp;
 
 ### 3. Verificar uso de epsacio en disco de los servidores ubuntu
 
@@ -40,7 +41,7 @@ ansible -i inventory/inventory.ini centos -m yum -a "name=httpd state=present" -
 ```bash
 ansible -i inventory/inventory.ini all -m shell -a "df -h"
 ```
-**Salida del comando**
+**Salida del comando**  
 ![Salida T2E1](/images/Tarea2/salida%20tarea%202%20ejercicio%203.png)
 
 ## Fin
