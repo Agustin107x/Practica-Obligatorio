@@ -10,6 +10,8 @@
 
 ***
 
+# &nbsp;
+
 ## Tarea 2 - Ejecución de comandos AD-HOC
 
 ### 1. Verificar tiempo de actividad en los servidores:
@@ -34,7 +36,7 @@ ansible -i inventory/inventory.ini centos -m yum -a "name=httpd state=present" -
 
 # &nbsp;
 
-### 3. Verificar uso de epsacio en disco de los servidores ubuntu
+### 3. Verificar uso de espacio en disco de los servidores ubuntu
 
 **Ejecución del comando**
 ```bash
