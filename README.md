@@ -1,17 +1,17 @@
-#  Proyecto Ansible ORT 2025
+#  Obligatorio Taller de Servidores Linux ORT 2025, Febrero
 
-Este es un pequeño proyecto de **Ansible** que ejecuta playbooks en distintos equipos.
+This is a small project using **Ansible - Playbooks** that runs tasks on some machines.
 
-## Requisitos
+## Requirements
 
-- Un equipo principal que actúe como **bastión**.
-- Equipos **Slaves** que recibirán las tareas.
-- Acceso **SSH** a los equipos de destino.
+- A primary server called **bastión** which will execute the playbooks.
+- Slaves machines that will receive the tasks.
+- Acces via SSH to slaves machines. 
 
-## Dependencias
+## Dependencies
 
-Es necesario instalar la colección de módulos **Ansible Posix** para ejecutar los playbooks correctamente.  
-Aquì se encuentra el [sitio oficial](https://docs.ansible.com/ansible/latest/collections/ansible/posix/index.html).
+Its neccesary to install the module collection **Ansible Posix** to execute the playbooks correctly.    
+Oficial documentation [here](https://docs.ansible.com/ansible/latest/collections/ansible/posix/index.html).
 
 ## Instalación
 
