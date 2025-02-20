@@ -13,36 +13,36 @@ This is a small project using **Ansible - Playbooks** that runs tasks on some ma
 Its neccesary to install the module collection **Ansible Posix** to execute the playbooks correctly.    
 Oficial documentation [here](https://docs.ansible.com/ansible/latest/collections/ansible/posix/index.html).
 
-## Instalación
+## Installation
 
-Clonamos el repositorio:
+The first step is cloning the repository.
 
 ```bash
 git clone https://github.com/Agustin107x/Practica-Obligatorio.git
 cd Practica-Obligatorio
 ```
-Luego, modificamos el archivo inventory.ini (./inventory/inventory.ini) con los hostnames e IPs de nuestros equipos Slaves:
+
+and then, modify the file inventory.ini (./inventory/inventory.ini) with the hostname and IPs of slaves.
 
 ```ini
 [centos]
-centos-srv ansible_host=192.168.2.10  # Reemplazar con la IP y Hostname real
+centos-srv ansible_host=192.168.2.10  # Replace with real IP and Hostname 
 
 [ubuntu]
-ubuntu-srv ansible_host=192.168.2.30  # Reemplazar con la IP y Hostname real
-
+ubuntu-srv ansible_host=192.168.2.30  # Replace with real IP and Hostname 
 [linux:children]
 centos
 ubuntu
 
 [linux:vars]
-ansible_user=sysadmin  # Cambiar si se usa otro usuario
+ansible_user=sysadmin  # Change if you want to use other user.
 
 [webserver]
-centos-srv  # Reemplazar si es necesario.
+centos-srv  # Replace if neccesary
 ```
 
-## Instalación de dependencias
-Para instalar las dependencias necesarias, ejecutar:
+## Installation of dependencies
+To install the necessary dependencies, execute:
 
 ```bash
 ansible-galaxy install -r collections/requirements.yml
