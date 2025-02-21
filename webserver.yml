@@ -25,7 +25,7 @@
       loop: [http, https]
     
     - name: Add VirtualHost name to hosts
-      ansible.builtin.lifeinfile:
+      ansible.builtin.lineinfile:
         path: /etc/hosts
         line: "192.168.2.10 www.ejemplo.com.uy"
         state: present
@@ -44,18 +44,18 @@
         state: directory
         owner: root
         group: root
-        model: '0755'
+        mode: '0755'
 
     - name: Check if directory for website exist
       ansible.builtin.file:
-        path: "var/www/www.ejemplo.com.uy/html"
+        path: "/var/www/www.ejemplo.com.uy/html"
         state: directory
         owner: apache
         group: apache
         mode: '0755'
 
     - name: Configuration of VirtualHost
-      ansible.builin.template:
+      ansible.builtin.template:
         src: ./templates/virtualhost.j2
         dest: "/etc/httpd/vhost.d/www.ejemplo.com.uy.conf"
         owner: root
@@ -64,17 +64,17 @@
       notify: Restart Apache
 
     - name: Exist index file in VirtualHost
-      ansible.builin.template:
+      ansible.builtin.template:
         src: ./templates/index.j2
-        dest: "var/www/www.ejemplo.com.uy/html/index.html"
+        dest: "/var/www/www.ejemplo.com.uy/html/index.html"
         owner: apache
         group: apache
         mode: '0644'
 
-    handlers:
+  handlers:
 
     - name: Restart Apache
-      ansible.builin.systemd_service:
+      ansible.builtin.systemd_service:
         name: httpd
         state: restarted
 
