@@ -5,8 +5,8 @@ This is a small project using **Ansible - Playbooks** that runs tasks on some ma
 ## Requirements
 
 - A primary server called **bastión** which will execute the playbooks.
-- Slaves machines that will receive the tasks.
-- Acces via SSH to slaves machines. 
+- **Slaves** machines that will receive the tasks.
+- Acces via **SSH** to slaves machines. 
 
 ## Dependencies
 
