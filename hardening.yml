@@ -1,0 +1,22 @@
+---
+
+- name: Firewall configuration for ubuntu
+  hosts: ubuntu
+  become: true
+
+  tasks:
+
+    - name: Enable UFW and deny incoming traffic
+      community.general.ufw:
+        state: enabled
+        policy: deny
+        direction: incoming
+
+    - name: Allow SSH
+      community.general.ufw:
+        rule: allow
+        name: OpenSSH
+
+
+
+
