@@ -17,6 +17,25 @@
         rule: allow
         name: OpenSSH
 
+    - name: Check if Public key of sysadmin is in autorized_key
+      ansible.posix.authorized_key:
+        user: sysadmin
+        state: present
+        key: "{{ lookup('file', '/home/sysadmin/.ssh/id_rsa.pub') }}"
 
+    - name: Remove login with password in SSH
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?PasswordAuthentication'
+        line: "PasswordAuthentication no"
+        state: present
+      notify: Restart SSH
+
+  handlers:
+    
+    - name: Restart SSH
+      ansible.builtin.systemd.service:
+        name: ssh
+        state: restarted
 
 
