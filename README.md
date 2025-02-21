@@ -4,7 +4,7 @@ This is a small project using **Ansible - Playbooks** that runs tasks on some ma
 
 ## Requirements
 
-- A primary server called **bastión** which will execute the playbooks.
+- A primary server called **bastion** which will execute the playbooks.
 - **Slaves** machines that will receive the tasks.
 - Acces via **SSH** to slaves machines. 
 
@@ -12,6 +12,9 @@ This is a small project using **Ansible - Playbooks** that runs tasks on some ma
 
 Its neccesary to install the module collection **Ansible Posix** to execute the playbooks correctly.    
 Oficial documentation [here](https://docs.ansible.com/ansible/latest/collections/ansible/posix/index.html).
+
+And also is needed the module **community.general.ufw** for manage firewall with UFW  
+Oficial documentation [here](https://docs.ansible.com/ansible/latest/collections/community/general/ufw_module.html).
 
 ## Installation
 
