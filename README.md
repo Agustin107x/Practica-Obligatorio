@@ -62,8 +62,17 @@ To install the necessary dependencies, execute:
 ansible-galaxy install -r collections/requirements.yml
 ```
 
-## Ejecución de playbooks.
+## Execute playbooks.
 
+### To run **webserver.yml**:
+```bash
+ansible-playbook -i inventory/inventory.ini webserver.yml --syntax-check
+```
+
+### To run **hardening.yml**:
+```bash
+ansible-playbook -i inventory/inventory.ini hardening.yml --syntax-check
+```
 
 ## License
 
