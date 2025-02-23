@@ -44,7 +44,7 @@ ansible_user=sysadmin  # Change if you want to use other user.
 centos-srv  # Replace if neccesary
 ```
 
-2. And the second step is to verify that the IP is the same as our centos machine
+2. And the **second** step is to verify that the IP is the same as our centos machine
 ```ini
 - name: Add domain name to hosts
 ansible.builtin.lineinfile:
@@ -73,6 +73,10 @@ ansible-playbook -i inventory/inventory.ini webserver.yml --syntax-check
 ```bash
 ansible-playbook -i inventory/inventory.ini hardening.yml --syntax-check
 ```
+
+## Asumptions
+-Git is installed in bastion
+-SSH is installed in all machines.
 
 ## License
 
