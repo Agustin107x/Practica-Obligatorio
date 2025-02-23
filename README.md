@@ -43,7 +43,6 @@ ansible_user=sysadmin  # Change if you want to use other user.
 [webserver]
 centos-srv  # Replace if neccesary
 ```
-***
 
 2. And the second step is to verify that the IP is the same as our centos machine
 ```ini
