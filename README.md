@@ -83,8 +83,8 @@ ansible-playbook -i inventory/inventory.ini hardening.yml --ask-become-pass
 ```
 
 ## Asumptions
-- Git is installed in bastion    
-- SSH is installed in all machines.
+- Git and Ansible is installed in bastion    
+- SSH is installed and enabled in all machines.
 
 ## License
 
