@@ -53,7 +53,14 @@ line: "192.168.2.10 www.ejemplo.com.uy" ##Here
 state: present
 delegate_to: localhost
 connection: local
-```
+```  
+
+3. It is necessary to use ssh-copy-id in bastion with the sysadmin user and the ip of the slave machines
+for example:  
+```sh
+ssh-copy-id sysadmin@192.168.2.10  
+``` 
+
 
 ## Installation of dependencies
 To install the necessary dependencies, execute:
@@ -75,8 +82,8 @@ ansible-playbook -i inventory/inventory.ini hardening.yml --syntax-check
 ```
 
 ## Asumptions
--Git is installed in bastion
--SSH is installed in all machines.
+- Git is installed in bastion    
+- SSH is installed in all machines.
 
 ## License
 
