@@ -34,7 +34,6 @@ Se usaría así:
 ```bash
 ansible-playbook -i (inventario) (playbook.yml) --syntax-check
 ```  
-  
 
 ***
 
@@ -49,6 +48,7 @@ Lanpixel, (29 de diciembre de 2022) [GUÍA] Automatizando nuestra red con Ansibl
 
 ## Desafios encontrados
 
+Me parecio una propuesta muy interesante, a la vez de usar github también para ir actualizando los cambios que iba haciendo. Nunca habia usado GitHub por lo que ir haciendo los commits diria que fue mi mayor desafio, pero a su vez, muy practico y util. 
 
 
 
