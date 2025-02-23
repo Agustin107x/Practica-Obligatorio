@@ -18,7 +18,7 @@ Oficial documentation [here](https://docs.ansible.com/ansible/latest/collections
 
 ## Installation
 
-The first step is cloning the repository.
+1. The first step is cloning the repository.
 
 ```bash
 git clone https://github.com/Agustin107x/Practica-Obligatorio.git
@@ -43,6 +43,18 @@ ansible_user=sysadmin  # Change if you want to use other user.
 [webserver]
 centos-srv  # Replace if neccesary
 ```
+***
+
+2. And the second step is modify the playbook webserver.yml with the correct ip and domain of our centos machine.
+```ini
+- name: Add domain name to hosts
+ansible.builtin.lineinfile:
+path: /etc/hosts
+line: "192.168.2.10 www.ejemplo.com.uy" ##Here 
+state: present
+delegate_to: localhost
+connection: local
+```
 
 ## Installation of dependencies
 To install the necessary dependencies, execute:
@@ -52,6 +64,7 @@ ansible-galaxy install -r collections/requirements.yml
 ```
 
 ## Ejecución de playbooks.
+
 
 ## License
 
