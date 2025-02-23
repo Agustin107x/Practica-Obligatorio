@@ -24,7 +24,7 @@
         immediate: true
       loop: [http, https]
     
-    - name: Add VirtualHost name to hosts
+    - name: Add domain name to hosts
       ansible.builtin.lineinfile:
         path: /etc/hosts
         line: "192.168.2.10 www.ejemplo.com.uy"
@@ -38,7 +38,7 @@
         line: "IncludeOptional /etc/httpd/vhost.d/*.conf"
       notify: Restart Apache
 
-    - name: Exist directory for VirtualHost
+    - name: Create directory for VirtualHost
       ansible.builtin.file:
         path: /etc/httpd/vhost.d
         state: directory
@@ -46,7 +46,7 @@
         group: root
         mode: '0755'
 
-    - name: Check if directory for website exist
+    - name: Create Document Root for www.ejemplo.com.uy
       ansible.builtin.file:
         path: "/var/www/www.ejemplo.com.uy/html"
         state: directory
@@ -63,7 +63,7 @@
         mode: '0644'
       notify: Restart Apache
 
-    - name: Exist index file in VirtualHost
+    - name: Copy index to Document Root
       ansible.builtin.template:
         src: ./templates/index.j2
         dest: "/var/www/www.ejemplo.com.uy/html/index.html"
