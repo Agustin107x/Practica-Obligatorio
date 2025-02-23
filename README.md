@@ -18,7 +18,7 @@ Oficial documentation [here](https://docs.ansible.com/ansible/latest/collections
 
 ## Installation
 
-### 1. The **first step** is cloning the repository.
+1. The **first step** is cloning the repository.
 
 ```bash
 git clone https://github.com/Agustin107x/Practica-Obligatorio.git
@@ -44,7 +44,8 @@ ansible_user=sysadmin  # Change if you want to use other user.
 centos-srv  # Replace if neccesary
 ```
 
-### 2. And the **second** step is to verify that the IP is the same as our centos machine
+2. And the **second** step is to verify that the IP is the same as our centos machine
+
 ```ini
 - name: Add domain name to hosts
 ansible.builtin.lineinfile:
@@ -55,12 +56,12 @@ delegate_to: localhost
 connection: local
 ```  
 
-### 3. It is necessary to use ssh-copy-id in bastion with the sysadmin user and the ip of the slave machines
+3. It is necessary to use ssh-copy-id in bastion with the sysadmin user and the ip of the slave machines
 for example:  
-```sh
+
+```bash
 ssh-copy-id sysadmin@192.168.2.10  
 ``` 
-
 
 ## Installation of dependencies
 To install the necessary dependencies, execute:
@@ -71,14 +72,14 @@ ansible-galaxy install -r collections/requirements.yml
 
 ## Execute playbooks.
 
-### To run **webserver.yml**:
+To run **webserver.yml**:
 ```bash
-ansible-playbook -i inventory/inventory.ini webserver.yml --syntax-check
+ansible-playbook -i inventory/inventory.ini webserver.yml --ask-become-pass
 ```
 
-### To run **hardening.yml**:
+To run **hardening.yml**:
 ```bash
-ansible-playbook -i inventory/inventory.ini hardening.yml --syntax-check
+ansible-playbook -i inventory/inventory.ini hardening.yml --ask-become-pass
 ```
 
 ## Asumptions
