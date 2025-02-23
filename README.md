@@ -18,14 +18,14 @@ Oficial documentation [here](https://docs.ansible.com/ansible/latest/collections
 
 ## Installation
 
-1. The first step is cloning the repository.
+1. The **first step** is cloning the repository.
 
 ```bash
 git clone https://github.com/Agustin107x/Practica-Obligatorio.git
 cd Practica-Obligatorio
 ```
 
-and then, modify the file inventory.ini (./inventory/inventory.ini) with the hostname and IPs of slaves.
+and then, **modify** the file inventory.ini (./inventory/inventory.ini) with the hostname and IPs of slaves.
 
 ```ini
 [centos]
@@ -45,7 +45,7 @@ centos-srv  # Replace if neccesary
 ```
 ***
 
-2. And the second step is modify the playbook webserver.yml with the correct ip and domain of our centos machine.
+2. And the second step is to verify that the IP is the same as our centos machine
 ```ini
 - name: Add domain name to hosts
 ansible.builtin.lineinfile:
