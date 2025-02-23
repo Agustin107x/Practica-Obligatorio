@@ -9,6 +9,13 @@
 - Agustin Neves (321438)
 
 ***
+## Tarea 1 - Verificación de conexión exitosa con el módulo ping de Ansible.  
+**Ejecución del comando**  
+```bash
+ansible all -i inventory/inventory.ini -m ping  
+```  
+**Salida del comando**  
+![Salida T1E1](/images/Tarea1/prueba%20comando%20ping%20en%20máquinas%20ansible.png)
 
 # &nbsp;
 
