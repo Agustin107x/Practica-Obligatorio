@@ -21,7 +21,7 @@ ansible all -i inventory/inventory.ini -m ping
 
 ## Tarea 2 - Ejecución de comandos AD-HOC
 
-### 1. Verificar tiempo de actividad en los servidores:
+### 2.1. Verificar tiempo de actividad en los servidores:
 
 **Ejecución del comando**  
 ```bash
@@ -30,9 +30,9 @@ ansible -i inventory/inventory.ini all -m shell -a "uptime"
 **Salida del comando**  
 ![Salida T2E1](/images/Tarea2/Salida%20tarea%202%20ejercicio%201.png)
 
-# &nbsp;
+## &nbsp;
 
-### 2. Instalar apache en servidores WEB.
+### 2.2. Instalar apache en servidores WEB.
 
 **Ejecución del comando**
 ```bash
@@ -41,9 +41,9 @@ ansible -i inventory/inventory.ini centos -m yum -a "name=httpd state=present" -
 **Salida del comando**  
 ![Salida T2E1](/images/Tarea2/salida%20tarea%202%20ejercicio%202.png)
 
-# &nbsp;
+## &nbsp;
 
-### 3. Verificar uso de espacio en disco de los servidores ubuntu
+### 2.3. Verificar uso de espacio en disco de los servidores ubuntu
 
 **Ejecución del comando**
 ```bash
@@ -52,7 +52,35 @@ ansible -i inventory/inventory.ini all -m shell -a "df -h"
 **Salida del comando**  
 ![Salida T2E1](/images/Tarea2/salida%20tarea%202%20ejercicio%203.png)
 
-## Fin
+# &nbsp;
+
+## Tarea 3 - Ejecución de playbooks (hardening.yml) y (webserver.yml)
+
+**Ejecución del playbook webserver.yml**
+
+```bash
+ansible-playbook -i inventory/inventory.ini webserver.yml --ask-become-pass
+```
+
+**Salida del comando**  
+![Salida T3E1](/images/Tarea3/results%20playbook%20websever.yml.JPG)
+
+## &nbsp;
+
+**Ejecución del playbook hardening.yml**
+
+```bash
+ansible-playbook -i inventory/inventory.ini hardening.yml --ask-become-pass
+```
+
+**Salida del comando**  
+![Salida T3E1](/images/Tarea3/results%20playbook%20hardening.yml.JPG)
+
+
+
+
+
+
 
 
 
