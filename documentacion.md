@@ -15,7 +15,7 @@
 ansible all -i inventory/inventory.ini -m ping  
 ```  
 **Salida del comando**  
-![Salida T1E1](/images/Tarea1/prueba%20comando%20ping%20en%20máquinas%20ansible.png)
+![Salida T1E1](/results/Tarea1/prueba%20comando%20ping%20en%20máquinas%20ansible.png)
 
 # &nbsp;
 
@@ -28,7 +28,7 @@ ansible all -i inventory/inventory.ini -m ping
 ansible -i inventory/inventory.ini all -m shell -a "uptime"
 ```
 **Salida del comando**  
-![Salida T2E1](/images/Tarea2/Salida%20tarea%202%20ejercicio%201.png)
+![Salida T2E1](/results/Tarea2/Salida%20tarea%202%20ejercicio%201.png)
 
 ## &nbsp;
 
@@ -39,7 +39,7 @@ ansible -i inventory/inventory.ini all -m shell -a "uptime"
 ansible -i inventory/inventory.ini centos -m yum -a "name=httpd state=present" --become --ask-become-pass
 ```
 **Salida del comando**  
-![Salida T2E1](/images/Tarea2/salida%20tarea%202%20ejercicio%202.png)
+![Salida T2E1](/results/Tarea2/salida%20tarea%202%20ejercicio%202.png)
 
 ## &nbsp;
 
@@ -50,7 +50,7 @@ ansible -i inventory/inventory.ini centos -m yum -a "name=httpd state=present" -
 ansible -i inventory/inventory.ini ubuntu -m shell -a "df -h"
 ```
 **Salida del comando**  
-![Salida T2E1](/images/Tarea2/salida_T2E3.png)
+![Salida T2E1](/results/Tarea2/salida_T2E3.png)
 
 # &nbsp;
 
@@ -63,7 +63,7 @@ ansible-playbook -i inventory/inventory.ini webserver.yml --ask-become-pass
 ```
 
 **Salida del comando**  
-![Salida T3E1](/images/Tarea3/results%20playbook%20websever.yml.JPG)
+![Salida T3E1](/results/Tarea3/results%20playbook%20websever.yml.JPG)
 
 ## &nbsp;
 
@@ -74,7 +74,7 @@ ansible-playbook -i inventory/inventory.ini hardening.yml --ask-become-pass
 ```
 
 **Salida del comando**  
-![Salida T3E1](/images/Tarea3/results%20playbook%20hardening.yml.JPG)
+![Salida T3E1](/results/Tarea3/results%20playbook%20hardening.yml.JPG)
 
 
 
