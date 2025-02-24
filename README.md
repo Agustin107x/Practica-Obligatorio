@@ -72,9 +72,9 @@ ansible-galaxy install -r collections/requirements.yml
 
 ## Execute playbooks.
 
-To run **webserver.yml**:
+To run **web_setup.yml**:
 ```bash
-ansible-playbook -i inventory/inventory.ini webserver.yml --ask-become-pass
+ansible-playbook -i inventory/inventory.ini web_setup.yml --ask-become-pass
 ```
 
 To run **hardening.yml**:
