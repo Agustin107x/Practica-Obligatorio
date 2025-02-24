@@ -1,0 +1,79 @@
+---
+- name: Deploy Apache web server on Centos
+  hosts: centos
+  become: true
+
+  tasks:
+
+    - name: Install apache (httpd)
+      ansible.builtin.yum:
+        name: httpd
+        state: present
+
+    - name: Start httpd service
+      ansible.builtin.systemd_service:
+        name: httpd
+        state: started
+        enabled: true
+    
+    - name: Add service httpd to firewalld
+      ansible.posix.firewalld:
+        service: "{{ item }}" 
+        state: enabled
+        permanent: true
+        immediate: true
+      loop: [http, https]
+    
+    - name: Add domain name to hosts
+      ansible.builtin.lineinfile:
+        path: /etc/hosts
+        line: "192.168.2.10 www.ejemplo.com.uy"
+        state: present
+      delegate_to: localhost
+      connection: local
+
+    - name: Modify Apache configuration
+      ansible.builtin.lineinfile:
+        path: /etc/httpd/conf/httpd.conf
+        line: "IncludeOptional /etc/httpd/vhost.d/*.conf"
+      notify: Restart Apache
+
+    - name: Create directory for VirtualHost
+      ansible.builtin.file:
+        path: /etc/httpd/vhost.d
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Create Document Root for www.ejemplo.com.uy
+      ansible.builtin.file:
+        path: "/var/www/www.ejemplo.com.uy/html"
+        state: directory
+        owner: apache
+        group: apache
+        mode: '0755'
+
+    - name: Configuration of VirtualHost
+      ansible.builtin.template:
+        src: ./templates/virtualhost.j2
+        dest: "/etc/httpd/vhost.d/www.ejemplo.com.uy.conf"
+        owner: root
+        group: root
+        mode: '0644'
+      notify: Restart Apache
+
+    - name: Copy index to Document Root
+      ansible.builtin.template:
+        src: ./templates/index.j2
+        dest: "/var/www/www.ejemplo.com.uy/html/index.html"
+        owner: apache
+        group: apache
+        mode: '0644'
+
+  handlers:
+
+    - name: Restart Apache
+      ansible.builtin.systemd_service:
+        name: httpd
+        state: restarted
