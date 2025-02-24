@@ -47,10 +47,10 @@ ansible -i inventory/inventory.ini centos -m yum -a "name=httpd state=present" -
 
 **Ejecución del comando**
 ```bash
-ansible -i inventory/inventory.ini all -m shell -a "df -h"
+ansible -i inventory/inventory.ini ubuntu -m shell -a "df -h"
 ```
 **Salida del comando**  
-![Salida T2E1](/images/Tarea2/salida%20tarea%202%20ejercicio%203.png)
+![Salida T2E1](/images/Tarea2/salida_T2E3.png)
 
 # &nbsp;
 
